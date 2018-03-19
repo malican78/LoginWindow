@@ -25,7 +25,7 @@ namespace LoginWindow
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=E:\DOCUMENTS\DATA.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlConnection con = new SqlConnection();
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Users where Username='" + textBox1.Text + "' and Password ='" + textBox2.Text + "'",con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
